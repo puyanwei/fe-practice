@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface TCButtonProps {
-  onClick: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   children: ReactNode;
 }
 
