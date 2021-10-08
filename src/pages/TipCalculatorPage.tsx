@@ -1,5 +1,7 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
+import styled from "styled-components";
 import TCButton from "../components/tip-calculator/TCButton";
+import { size, colours } from "../styles/variables";
 
 const TipCalculatorPage = () => {
   const [tip, setTip] = useState(0);
@@ -36,9 +38,9 @@ const TipCalculatorPage = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>SPLITTER</h1>
-      <main>
+      <Card>
         <h2>Bill</h2>
         <input
           type="number"
@@ -85,9 +87,24 @@ const TipCalculatorPage = () => {
             RESET
           </button>
         </div>
-      </main>
-    </div>
+      </Card>
+    </Layout>
   );
 };
+
+const Layout = styled.div`
+  height: 100vh;
+  @media (min-width: 0px) and (max-width: ${size.mobileL}) {
+    background-color: ${colours.cyan};
+  }
+  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    background-color: red;
+  }
+`;
+
+const Card = styled.main`
+  background: white;
+  border-radius: 25px;
+`;
 
 export default TipCalculatorPage;
