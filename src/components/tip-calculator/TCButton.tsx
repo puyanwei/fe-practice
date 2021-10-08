@@ -19,7 +19,7 @@ interface StyledButtonProps {
 }
 
 const TCButton = ({
-  width = "7rem",
+  width = "47%",
   bgcolor = `${colors.darkCyan}`,
   txtColor = `${colors.white}`,
   active = false,
