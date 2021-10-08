@@ -8,10 +8,10 @@ export const size = {
   desktop: "2560px",
 };
 
-export const colours = {
+export const colors = {
   cyan: "hsl(185deg 41% 84%)",
   darkCyan: "hsl(183, 100%, 15%)",
-  greyCyan: "hsl(186, 14%, 43%)",
+  grey: "hsl(172deg 14% 41%)",
   greyerCyan: "hsl(184, 14%, 56%)",
   lightGreyCyan: "hsl(185, 41%, 84%)",
   lighterGreyCyan: "hsl(189, 41%, 97%)",

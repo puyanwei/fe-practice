@@ -2,7 +2,7 @@ import { ChangeEvent, MouseEvent, useState } from "react";
 import styled from "styled-components";
 import TCButton from "../components/tip-calculator/TCButton";
 import TCInputBox from "../components/tip-calculator/TCInputBox";
-import { size, colours } from "../styles/variables";
+import { size, colors } from "../styles/variables";
 
 const TipCalculatorPage = () => {
   const [tip, setTip] = useState(0);
@@ -49,26 +49,29 @@ const TipCalculatorPage = () => {
             value={bill}
             onChange={(e) => setBill(parseInt(e.target.value))}
           />
-          <div className="tip-container">
-            <label className="tc-label">Select Tip %</label>
+          <label className="tc-label">Select Tip %</label>
+          <TipLayout>
             <TCButton onClick={handleTip}>5%</TCButton>
+            <TCButton onClick={handleTip}>10%</TCButton>
             <TCButton onClick={handleTip}>15%</TCButton>
             <TCButton onClick={handleTip}>25%</TCButton>
             <TCButton onClick={handleTip}>50%</TCButton>
             <input
+              className="tc-custom-tip"
               type="number"
               placeholder="Custom"
               value={customTip}
+              width="50"
               onChange={handleCustomTip}
             />
-          </div>
+          </TipLayout>
           <TCInputBox
             name="people"
             label="Number of People"
             value={people}
             onChange={(e) => setPeople(parseInt(e.target.value))}
           />
-          <Card colour={colours.darkCyan}>
+          <Card colour={colors.darkCyan}>
             <div className="tip-summary-line">
               <span className="tc-summary">Tip Amount</span>
               <span className="tc-summary-dark">/ person</span>
@@ -91,8 +94,9 @@ const TipCalculatorPage = () => {
 
 const Layout = styled.div`
   height: 100vh;
+  color: ${colors.grey};
   @media (min-width: 0px) and (max-width: ${size.mobileL}) {
-    background-color: ${colours.cyan};
+    background-color: ${colors.cyan};
   }
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
     background-color: red;
@@ -103,6 +107,13 @@ const Card = styled.div<{ colour: string }>`
   padding: 1rem;
   background-color: ${({ colour }) => colour};
   border-radius: 25px;
+`;
+
+const TipLayout = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export default TipCalculatorPage;

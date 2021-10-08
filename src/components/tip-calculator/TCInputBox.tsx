@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 interface TCInputBoxProps {
   name: string;
-  value: number;
   label: string;
+  value: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
