@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import styled from "styled-components";
+import { colors } from "../../styles/variables";
 
 interface TCInputBoxProps {
   name: string;
@@ -17,6 +18,16 @@ const TCInputBox = ({ name, value, label, onChange }: TCInputBoxProps) => (
 
 const Layout = styled.div`
   margin: 1rem 0;
+  > input {
+    width: 100%;
+    height: 1.8rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 27px;
+    color: ${colors.grey};
+    background-color: ${colors.cyan};
+  }
 `;
 
 export default TCInputBox;

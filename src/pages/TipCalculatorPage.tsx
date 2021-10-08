@@ -38,6 +38,8 @@ const TipCalculatorPage = () => {
     setPeople(0);
   };
 
+  console.log(`people`, people);
+
   return (
     <Layout>
       <h1 className="no-margin">SPLITTER</h1>
@@ -82,9 +84,15 @@ const TipCalculatorPage = () => {
               <span className="tc-summary-dark">/ person</span>
               <span>{total}</span>
             </div>
-            <button className="reset" onClick={resetCalculator}>
+            <TCButton
+              bgcolor={colors.lightCyan}
+              txtColor={colors.darkCyan}
+              bold
+              width="100%"
+              onClick={resetCalculator}
+            >
               RESET
-            </button>
+            </TCButton>
           </Card>
         </Card>
       </main>

@@ -13,8 +13,7 @@ export const colors = {
   darkCyan: "hsl(183, 100%, 15%)",
   grey: "hsl(172deg 14% 41%)",
   greyerCyan: "hsl(184, 14%, 56%)",
-  lightGreyCyan: "hsl(185, 41%, 84%)",
-  lighterGreyCyan: "hsl(189, 41%, 97%)",
+  lightCyan: "hsl(172deg 67% 45%)",
   white: "hsl(0, 0%, 100%)",
 };
 
