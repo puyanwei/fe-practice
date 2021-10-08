@@ -1,6 +1,7 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
 import styled from "styled-components";
 import TCButton from "../components/tip-calculator/TCButton";
+import TCInputBox from "../components/tip-calculator/TCInputBox";
 import { size, colours } from "../styles/variables";
 
 const TipCalculatorPage = () => {
@@ -39,55 +40,51 @@ const TipCalculatorPage = () => {
 
   return (
     <Layout>
-      <h1>SPLITTER</h1>
-      <Card>
-        <h2>Bill</h2>
-        <input
-          type="number"
-          name="bill"
-          value={bill}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setBill(parseInt(e.target.value))
-          }
-        />
-        <div className="tip-container">
-          <h2>Select Tip %</h2>
-          <TCButton onClick={handleTip}>5%</TCButton>
-          <TCButton onClick={handleTip}>15%</TCButton>
-          <TCButton onClick={handleTip}>25%</TCButton>
-          <TCButton onClick={handleTip}>50%</TCButton>
-          <input
-            type="number"
-            placeholder="Custom"
-            value={customTip}
-            onChange={handleCustomTip}
+      <h1 className="no-margin">SPLITTER</h1>
+      <main>
+        <Card colour="white">
+          <TCInputBox
+            name="bill"
+            label="Bill"
+            value={bill}
+            onChange={(e) => setBill(parseInt(e.target.value))}
           />
-        </div>
-        <h2>Number of People</h2>
-        <input
-          type="number"
-          name="people"
-          value={people}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setPeople(parseInt(e.target.value))
-          }
-        />
-        <div className="tip-summary-card">
-          <div className="tip-summary-line">
-            <span>Tip Amount</span>
-            <span>/ person</span>
-            <span>{tipAmount}</span>
+          <div className="tip-container">
+            <label className="tc-label">Select Tip %</label>
+            <TCButton onClick={handleTip}>5%</TCButton>
+            <TCButton onClick={handleTip}>15%</TCButton>
+            <TCButton onClick={handleTip}>25%</TCButton>
+            <TCButton onClick={handleTip}>50%</TCButton>
+            <input
+              type="number"
+              placeholder="Custom"
+              value={customTip}
+              onChange={handleCustomTip}
+            />
           </div>
-          <div className="tip-summary-line">
-            <span>Total</span>
-            <span>/ person</span>
-            <span>{total}</span>
-          </div>
-          <button className="reset" onClick={resetCalculator}>
-            RESET
-          </button>
-        </div>
-      </Card>
+          <TCInputBox
+            name="people"
+            label="Number of People"
+            value={people}
+            onChange={(e) => setPeople(parseInt(e.target.value))}
+          />
+          <Card colour={colours.darkCyan}>
+            <div className="tip-summary-line">
+              <span className="tc-summary">Tip Amount</span>
+              <span className="tc-summary-dark">/ person</span>
+              <span>{tipAmount}</span>
+            </div>
+            <div className="tip-summary-line">
+              <span className="tc-summary">Total</span>
+              <span className="tc-summary-dark">/ person</span>
+              <span>{total}</span>
+            </div>
+            <button className="reset" onClick={resetCalculator}>
+              RESET
+            </button>
+          </Card>
+        </Card>
+      </main>
     </Layout>
   );
 };
@@ -102,8 +99,9 @@ const Layout = styled.div`
   }
 `;
 
-const Card = styled.main`
-  background: white;
+const Card = styled.div<{ colour: string }>`
+  padding: 1rem;
+  background-color: ${({ colour }) => colour};
   border-radius: 25px;
 `;
 

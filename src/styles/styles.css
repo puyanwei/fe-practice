@@ -10,3 +10,22 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 24px;
 }
+
+.no-margin {
+  margin: 0;
+}
+
+.tc-label {
+  display: block;
+  font-size: 16px;
+}
+
+.tc-summary {
+  color: white;
+  font-size: 16px;
+}
+
+.tc-summary-dark {
+  color: hsl(186deg 27% 39%);
+  font-size: 14px;
+}
