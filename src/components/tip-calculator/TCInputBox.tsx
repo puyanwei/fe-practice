@@ -19,6 +19,7 @@ const TCInputBox = ({ name, value, label, onChange }: TCInputBoxProps) => (
 const Layout = styled.div`
   margin: 1rem 0;
   > input {
+    margin: 0.5rem 0;
     width: 100%;
     height: 1.8rem;
     padding: 0.5rem;
@@ -27,6 +28,7 @@ const Layout = styled.div`
     font-size: 27px;
     color: ${colors.grey};
     background-color: ${colors.cyan};
+    font-family: "Space Mono", monospace;
   }
 `;
 

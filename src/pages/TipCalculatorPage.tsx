@@ -13,13 +13,13 @@ const TipCalculatorPage = () => {
 
   const handleTip = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
-    const number = parseInt(target.innerText.slice(0, -1));
+    const number = parseFloat(target.innerText.slice(0, -1));
     setIsCustomTip(false);
     setTip(number);
   };
 
   const handleCustomTip = (e: ChangeEvent<HTMLInputElement>) => {
-    setCustomTip(parseInt(e.target.value));
+    setCustomTip(parseFloat(e.target.value));
     setIsCustomTip(true);
   };
 
@@ -28,17 +28,15 @@ const TipCalculatorPage = () => {
 
   const finalTip = isCustomTip ? customTip : tip;
   const tipAmountCalc = (((finalTip / 100) * bill) / people).toFixed(2);
-  const totalCalc = (parseInt(tipAmountCalc) + bill / people).toFixed(2);
-  const tipAmount = checkValidNumber(parseInt(tipAmountCalc));
-  const total = checkValidNumber(parseInt(totalCalc));
+  const totalCalc = (parseFloat(tipAmountCalc) + bill / people).toFixed(2);
+  const tipAmount = checkValidNumber(parseFloat(tipAmountCalc));
+  const total = checkValidNumber(parseFloat(totalCalc));
 
   const resetCalculator = () => {
     setBill(0);
     setCustomTip(0);
     setPeople(0);
   };
-
-  console.log(`people`, people);
 
   return (
     <Layout>
@@ -49,10 +47,10 @@ const TipCalculatorPage = () => {
             name="bill"
             label="Bill"
             value={bill}
-            onChange={(e) => setBill(parseInt(e.target.value))}
+            onChange={(e) => setBill(parseFloat(e.target.value))}
           />
           <label className="tc-label">Select Tip %</label>
-          <TipLayout>
+          <div className="flex-inbetween">
             <TCButton onClick={handleTip}>5%</TCButton>
             <TCButton onClick={handleTip}>10%</TCButton>
             <TCButton onClick={handleTip}>15%</TCButton>
@@ -66,28 +64,33 @@ const TipCalculatorPage = () => {
               width="50"
               onChange={handleCustomTip}
             />
-          </TipLayout>
+          </div>
           <TCInputBox
             name="people"
             label="Number of People"
             value={people}
-            onChange={(e) => setPeople(parseInt(e.target.value))}
+            onChange={(e) => setPeople(parseFloat(e.target.value))}
           />
           <Card colour={colors.darkCyan}>
-            <div className="tip-summary-line">
-              <span className="tc-summary">Tip Amount</span>
-              <span className="tc-summary-dark">/ person</span>
-              <span>{tipAmount}</span>
+            <div className="tip-summary-line flex-inbetween">
+              <div className="line-height-sm">
+                <span className="tc-summary">Tip Amount</span>
+                <br />
+                <span className="tc-summary-dark">/ person</span>
+              </div>
+              <span className="tc-summary-amount">${tipAmount.toFixed(2)}</span>
             </div>
-            <div className="tip-summary-line">
-              <span className="tc-summary">Total</span>
-              <span className="tc-summary-dark">/ person</span>
-              <span>{total}</span>
+            <div className="tip-summary-line flex-inbetween margin-ver">
+              <div className="line-height-sm">
+                <span className="tc-summary">Total</span>
+                <br />
+                <span className="tc-summary-dark">/ person</span>
+              </div>
+              <span className="tc-summary-amount">${total.toFixed(2)}</span>
             </div>
             <TCButton
               bgcolor={colors.lightCyan}
               txtColor={colors.darkCyan}
-              bold
               width="100%"
               onClick={resetCalculator}
             >
@@ -115,13 +118,6 @@ const Card = styled.div<{ colour: string }>`
   padding: 1rem;
   background-color: ${({ colour }) => colour};
   border-radius: 25px;
-`;
-
-const TipLayout = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 export default TipCalculatorPage;

@@ -1,18 +1,24 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  font-family: "Space Mono", monospace;
-  font-size: 24px;
-}
-
 .no-margin {
   margin: 0;
+}
+
+.margin-hor {
+  margin: 0 1rem;
+}
+
+.margin-ver {
+  margin: 1rem 0;
+}
+
+.flex-inbetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line-height-sm {
+  line-height: 0.8rem;
 }
 
 .tc-label {
@@ -30,6 +36,11 @@ body {
   font-size: 14px;
 }
 
+.tc-summary-amount {
+  font-size: 40px;
+  font-weight: bold;
+}
+
 .tc-custom-tip {
   width: 7rem;
   height: 2rem;
@@ -40,6 +51,8 @@ body {
   font-size: 27px;
   color: hsl(172deg 14% 41%);
   background-color: hsl(185deg 41% 84%);
+  font-family: "Space Mono", monospace;
+  text-align: center;
 }
 
 .tc-custom-tip::placeholder {
