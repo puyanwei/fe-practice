@@ -10,9 +10,11 @@ const TipCalculatorPage = () => {
   const [isCustomTip, setIsCustomTip] = useState(false);
   const [bill, setBill] = useState(0);
   const [people, setPeople] = useState(0);
+  const [active, setActive] = useState("");
 
   const handleTip = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
+    setActive(target.innerText);
     const number = parseFloat(target.innerText.slice(0, -1));
     setIsCustomTip(false);
     setTip(number);
@@ -51,11 +53,21 @@ const TipCalculatorPage = () => {
           />
           <label className="tc-label">Select Tip %</label>
           <div className="flex-inbetween">
-            <TCButton onClick={handleTip}>5%</TCButton>
-            <TCButton onClick={handleTip}>10%</TCButton>
-            <TCButton onClick={handleTip}>15%</TCButton>
-            <TCButton onClick={handleTip}>25%</TCButton>
-            <TCButton onClick={handleTip}>50%</TCButton>
+            <TCButton onClick={handleTip} active={active === "5%"}>
+              5%
+            </TCButton>
+            <TCButton onClick={handleTip} active={active === "10%"}>
+              10%
+            </TCButton>
+            <TCButton onClick={handleTip} active={active === "15%"}>
+              15%
+            </TCButton>
+            <TCButton onClick={handleTip} active={active === "25%"}>
+              25%
+            </TCButton>
+            <TCButton onClick={handleTip} active={active === "50%"}>
+              50%
+            </TCButton>
             <input
               className="tc-custom-tip"
               type="number"
@@ -63,6 +75,7 @@ const TipCalculatorPage = () => {
               value={customTip}
               width="50"
               onChange={handleCustomTip}
+              onFocus={(e) => setActive("")}
             />
           </div>
           <TCInputBox

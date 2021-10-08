@@ -6,6 +6,7 @@ interface TCButtonProps {
   width?: string;
   bgcolor?: string;
   txtColor?: string;
+  active?: boolean;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   children: ReactNode;
 }
@@ -14,12 +15,14 @@ interface StyledButtonProps {
   width: string;
   bgcolor: string;
   txtColor: string;
+  active: boolean;
 }
 
 const TCButton = ({
   width = "7rem",
   bgcolor = `${colors.darkCyan}`,
   txtColor = `${colors.white}`,
+  active = false,
   onClick,
   children,
 }: TCButtonProps) => {
@@ -29,6 +32,7 @@ const TCButton = ({
       width={width}
       bgcolor={bgcolor}
       txtColor={txtColor}
+      active={active}
       onClick={onClick}
     >
       {children}
@@ -43,7 +47,8 @@ const Button = styled.button<StyledButtonProps>`
   padding: 0.5rem;
   border-radius: 7px;
   border: none;
-  background-color: ${({ bgcolor }): string => bgcolor};
+  background-color: ${({ bgcolor, active }): string =>
+    active ? colors.lightCyan : bgcolor};
   color: ${({ txtColor }): string => txtColor};
   font-family: "Space Mono", monospace;
   font-size: 25px;
