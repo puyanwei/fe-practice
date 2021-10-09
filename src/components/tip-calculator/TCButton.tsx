@@ -1,14 +1,13 @@
-import { ReactNode } from "react";
 import styled from "styled-components";
 import { colors, weights } from "../../styles/variables";
 
 interface TCButtonProps {
+  label: string;
   width?: string;
   bgcolor?: string;
   txtColor?: string;
   active?: boolean;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  children: ReactNode;
 }
 
 interface StyledButtonProps {
@@ -19,12 +18,12 @@ interface StyledButtonProps {
 }
 
 const TCButton = ({
+  label,
   width = "47%",
   bgcolor = `${colors.darkCyan}`,
   txtColor = `${colors.white}`,
   active = false,
   onClick,
-  children,
 }: TCButtonProps) => {
   return (
     <Button
@@ -35,7 +34,7 @@ const TCButton = ({
       active={active}
       onClick={onClick}
     >
-      {children}
+      {label}
     </Button>
   );
 };

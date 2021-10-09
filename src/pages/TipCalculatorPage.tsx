@@ -14,6 +14,8 @@ const TipCalculatorPage = () => {
   const [people, setPeople] = useState(0);
   const [active, setActive] = useState("");
 
+  const tipPercentages = ["5%", "10%", "15%", "25%", "50%"];
+
   const handleTip = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
     setActive(target.innerText);
@@ -57,21 +59,14 @@ const TipCalculatorPage = () => {
             />
             <label className="tc-label">Select Tip %</label>
             <div className="flex-inbetween">
-              <TCButton onClick={handleTip} active={active === "5%"}>
-                5%
-              </TCButton>
-              <TCButton onClick={handleTip} active={active === "10%"}>
-                10%
-              </TCButton>
-              <TCButton onClick={handleTip} active={active === "15%"}>
-                15%
-              </TCButton>
-              <TCButton onClick={handleTip} active={active === "25%"}>
-                25%
-              </TCButton>
-              <TCButton onClick={handleTip} active={active === "50%"}>
-                50%
-              </TCButton>
+              {tipPercentages.map((tipPercent) => (
+                <TCButton
+                  label={tipPercent}
+                  onClick={handleTip}
+                  key={tipPercent}
+                  active={active === tipPercent}
+                />
+              ))}
               <input
                 className="tc-custom-tip"
                 type="number"
@@ -106,13 +101,12 @@ const TipCalculatorPage = () => {
               <span className="tc-summary-amount">${total.toFixed(2)}</span>
             </div>
             <TCButton
+              label="RESET"
               bgcolor={colors.lightCyan}
               txtColor={colors.darkCyan}
               width="100%"
               onClick={resetCalculator}
-            >
-              RESET
-            </TCButton>
+            />
           </TCSummaryCard>
         </TCCard>
       </CalculatorLayout>
