@@ -2,6 +2,7 @@ import { ChangeEvent, MouseEvent, useState } from "react";
 import styled from "styled-components";
 import SplitterTitle from "../components/tip-calculator/SplitterTitle";
 import TCButton from "../components/tip-calculator/TCButton";
+import TCCustomInputBox from "../components/tip-calculator/TCCustomInputBox";
 import TCInputBox from "../components/tip-calculator/TCInputBox";
 import IconDollar from "../icons/IconDollar";
 import IconPerson from "../icons/IconPerson";
@@ -71,9 +72,8 @@ const TipCalculatorPage = () => {
                   active={active === tipPercent}
                 />
               ))}
-              <input
-                className="tc-custom-tip"
-                type="number"
+              <TCCustomInputBox
+                name="custom-tip"
                 placeholder="Custom"
                 value={customTip}
                 onChange={handleCustomTip}

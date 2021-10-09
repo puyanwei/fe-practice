@@ -41,20 +41,6 @@
   font-weight: bold;
 }
 
-.tc-custom-tip {
-  width: 47%;
-  height: 2rem;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 7px;
-  border: none;
-  font-size: 27px;
-  color: hsl(172deg 14% 41%);
-  background-color: hsl(185deg 41% 84%);
-  font-family: "Space Mono", monospace;
-  text-align: center;
-}
-
 .tc-custom-tip::placeholder {
   text-align: center;
 }
