@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
-import { colors } from "../../styles/variables";
+import { colors, size } from "../../styles/variables";
 
 interface TCCustomInputBoxProps {
   name: string;
@@ -44,6 +44,13 @@ const Layout = styled.div`
     background-color: ${colors.cyan};
     font-family: "Space Mono", monospace;
     text-align: center;
+  }
+
+  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    width: 30%;
+    > input {
+      padding-left: 1rem;
+    }
   }
 `;
 

@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { colors, weights } from "../../styles/variables";
+import { colors, weights, size } from "../../styles/variables";
 
 interface TCButtonProps {
   label: string;
-  width?: string;
+  width: string;
+  lgWidth?: string;
   bgcolor?: string;
   txtColor?: string;
   active?: boolean;
@@ -12,6 +13,7 @@ interface TCButtonProps {
 
 interface StyledButtonProps {
   width: string;
+  lgWidth?: string;
   bgcolor: string;
   txtColor: string;
   active: boolean;
@@ -19,27 +21,29 @@ interface StyledButtonProps {
 
 const TCButton = ({
   label,
-  width = "47%",
+  width,
+  lgWidth = "",
   bgcolor = `${colors.darkCyan}`,
   txtColor = `${colors.white}`,
   active = false,
   onClick,
 }: TCButtonProps) => {
   return (
-    <Button
-      type="button"
+    <TipButton
       width={width}
+      lgWidth={lgWidth}
+      type="button"
       bgcolor={bgcolor}
       txtColor={txtColor}
       active={active}
       onClick={onClick}
     >
       {label}
-    </Button>
+    </TipButton>
   );
 };
 
-const Button = styled.button<StyledButtonProps>`
+const TipButton = styled.button<StyledButtonProps>`
   width: ${({ width }): string => width};
   height: 2rem;
   margin: 0.5rem 0;
@@ -54,6 +58,10 @@ const Button = styled.button<StyledButtonProps>`
   font-size: 22px;
   font-weight: ${weights.bold};
   line-height: 0;
+
+  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    width: ${({ lgWidth, width }): string => (lgWidth ? lgWidth : width)};
+  }
 `;
 
 export default TCButton;

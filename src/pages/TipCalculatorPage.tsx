@@ -51,73 +51,79 @@ const TipCalculatorPage = () => {
 
   return (
     <Layout>
-      <SplitterTitle />
-      <CalculatorLayout>
-        <TCCard colour="white">
-          <TipLayout>
-            <TCInputBox
-              name="bill"
-              label="Bill"
-              value={bill}
-              icon={<IconDollar />}
-              onChange={(e) => setBill(parseFloat(e.target.value))}
-            />
-            <label className="tc-label">Select Tip %</label>
-            <div className="flex-inbetween">
-              {tipPercentages.map((tipPercent) => (
-                <TCButton
-                  label={tipPercent}
-                  onClick={handleTip}
-                  key={tipPercent}
-                  active={active === tipPercent}
-                />
-              ))}
-              <TCCustomInputBox
-                name="custom-tip"
-                placeholder="Custom"
-                value={customTip}
-                onChange={handleCustomTip}
-                onFocus={(e) => setActive("")}
+      <div className="calculator-app">
+        <SplitterTitle />
+        <CalculatorLayout>
+          <TCCard colour="white">
+            <TipLayout>
+              <TCInputBox
+                name="bill"
+                label="Bill"
+                value={bill}
+                icon={<IconDollar />}
+                onChange={(e) => setBill(parseFloat(e.target.value))}
               />
-            </div>
-            <TCInputBox
-              name="people"
-              label="Number of People"
-              value={people}
-              icon={<IconPerson />}
-              onChange={(e) => setPeople(parseFloat(e.target.value))}
-            />
-          </TipLayout>
-          <TCSummaryCard colour={colors.darkCyan}>
-            <div className="tip-summary-line flex-inbetween">
-              <div className="line-height-sm">
-                <span className="tc-summary">Tip Amount</span>
-                <br />
-                <span className="tc-summary-dark">/ person</span>
+              <label className="tc-label">Select Tip %</label>
+              <div className="flex-inbetween">
+                {tipPercentages.map((tipPercent) => (
+                  <TCButton
+                    label={tipPercent}
+                    width="47%"
+                    lgWidth="30%"
+                    onClick={handleTip}
+                    key={tipPercent}
+                    active={active === tipPercent}
+                  />
+                ))}
+                <TCCustomInputBox
+                  name="custom-tip"
+                  placeholder="Custom"
+                  value={customTip}
+                  onChange={handleCustomTip}
+                  onFocus={(e) => setActive("")}
+                />
               </div>
-              <span className="tc-summary-amount">
-                &#36;{tipAmount.toFixed(2)}
-              </span>
-            </div>
-            <div className="tip-summary-line flex-inbetween margin-ver">
-              <div className="line-height-sm">
-                <span className="tc-summary">Total</span>
-                <br />
-                <span className="tc-summary-dark">/ person</span>
+              <TCInputBox
+                name="people"
+                label="Number of People"
+                value={people}
+                icon={<IconPerson />}
+                onChange={(e) => setPeople(parseFloat(e.target.value))}
+              />
+            </TipLayout>
+            <TCSummaryCard colour={colors.darkCyan}>
+              <div className="tip-summary-line flex-inbetween">
+                <div className="line-height-sm">
+                  <span className="tc-summary">Tip Amount</span>
+                  <br />
+                  <span className="tc-summary-dark">/ person</span>
+                </div>
+                <span className="tc-summary-amount">
+                  &#36;{tipAmount.toFixed(2)}
+                </span>
               </div>
-              <span className="tc-summary-amount">&#36;{total.toFixed(2)}</span>
-            </div>
-            <span />
-            <TCButton
-              label="RESET"
-              bgcolor={colors.lightCyan}
-              txtColor={colors.darkCyan}
-              width="100%"
-              onClick={resetCalculator}
-            />
-          </TCSummaryCard>
-        </TCCard>
-      </CalculatorLayout>
+              <div className="tip-summary-line flex-inbetween margin-ver">
+                <div className="line-height-sm">
+                  <span className="tc-summary">Total</span>
+                  <br />
+                  <span className="tc-summary-dark">/ person</span>
+                </div>
+                <span className="tc-summary-amount">
+                  &#36;{total.toFixed(2)}
+                </span>
+              </div>
+              <span />
+              <TCButton
+                label="RESET"
+                bgcolor={colors.lightCyan}
+                txtColor={colors.darkCyan}
+                width="100%"
+                onClick={resetCalculator}
+              />
+            </TCSummaryCard>
+          </TCCard>
+        </CalculatorLayout>
+      </div>
     </Layout>
   );
 };
@@ -126,6 +132,15 @@ const Layout = styled.div`
   height: 100vh;
   color: ${colors.grey};
   background-color: ${colors.cyan};
+  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    > .calculator-app {
+      position: relative;
+      top: 40%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
 `;
 
 const CalculatorLayout = styled.div`
@@ -139,9 +154,6 @@ const CalculatorLayout = styled.div`
 
 const TipLayout = styled.div`
   max-width: 14rem;
-  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
-    margin-right: 1rem;
-  }
 `;
 
 export default TipCalculatorPage;

@@ -39,6 +39,11 @@ const Layout = styled.div`
     font-weight: ${weights.bold};
     text-align: right;
   }
+  > input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const IconPosition = styled.span`

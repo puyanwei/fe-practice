@@ -12,9 +12,10 @@ export const TCCard = styled.div<CardProps>`
   background-color: ${({ colour }) => colour};
 
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
-    padding-top: 2.6rem;
+    max-width: 35rem;
+    max-height: 19rem;
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 1.2rem 1rem 1rem 1rem;
   }
 `;
