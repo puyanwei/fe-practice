@@ -3,7 +3,6 @@ import { size } from "../variables";
 
 interface CardProps {
   colour: string;
-  maxWidth: string;
 }
 
 export const TCCard = styled.div<CardProps>`
@@ -11,10 +10,11 @@ export const TCCard = styled.div<CardProps>`
   padding: 0.5rem 1rem;
   border-radius: 25px;
   background-color: ${({ colour }) => colour};
-  max-width: ${({ maxWidth }) => maxWidth};
+
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    padding-top: 2.6rem;
     display: flex;
-    flex-wrap: wrap;
-    max-width: 50rem;
+    justify-content: space-around;
+    padding: 1rem;
   }
 `;

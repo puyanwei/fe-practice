@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import { size } from "../variables";
-import { TCCard } from "./TCCard";
+interface TCSummaryCardProps {
+  colour: string;
+}
 
-export const TCSummaryCard = styled(TCCard)`
-  margin: 0 auto;
+export const TCSummaryCard = styled.div<TCSummaryCardProps>`
   padding: 1rem;
   border-radius: 25px;
   background-color: ${({ colour }) => colour};
-  max-width: ${({ maxWidth }) => maxWidth};
-  max-width: 15rem;
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
-    margin-left: 1rem;
+    padding-top: 1.5rem;
+    height: 20rem;
+    width: 50%;
+    > span {
+      display: block;
+      height: 8.9rem;
+    }
   }
 `;

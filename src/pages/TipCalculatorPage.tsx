@@ -53,7 +53,7 @@ const TipCalculatorPage = () => {
     <Layout>
       <SplitterTitle />
       <CalculatorLayout>
-        <TCCard colour="white" maxWidth="14rem">
+        <TCCard colour="white">
           <TipLayout>
             <TCInputBox
               name="bill"
@@ -88,7 +88,7 @@ const TipCalculatorPage = () => {
               onChange={(e) => setPeople(parseFloat(e.target.value))}
             />
           </TipLayout>
-          <TCSummaryCard colour={colors.darkCyan} maxWidth="15rem">
+          <TCSummaryCard colour={colors.darkCyan}>
             <div className="tip-summary-line flex-inbetween">
               <div className="line-height-sm">
                 <span className="tc-summary">Tip Amount</span>
@@ -107,6 +107,7 @@ const TipCalculatorPage = () => {
               </div>
               <span className="tc-summary-amount">&#36;{total.toFixed(2)}</span>
             </div>
+            <span />
             <TCButton
               label="RESET"
               bgcolor={colors.lightCyan}
@@ -122,24 +123,25 @@ const TipCalculatorPage = () => {
 };
 
 const Layout = styled.div`
+  height: 100vh;
   color: ${colors.grey};
   background-color: ${colors.cyan};
-  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
-    margin: auto 0;
-  }
 `;
 
 const CalculatorLayout = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  max-width: 15rem;
+  margin: 0 auto;
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
-    margin-left: 1rem;
+    max-width: 40rem;
   }
 `;
 
 const TipLayout = styled.div`
-  margin: 0 auto;
   max-width: 14rem;
+  @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
+    margin-right: 1rem;
+  }
 `;
 
 export default TipCalculatorPage;
