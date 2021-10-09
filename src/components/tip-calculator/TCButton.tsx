@@ -48,9 +48,10 @@ const Button = styled.button<StyledButtonProps>`
   border: none;
   background-color: ${({ bgcolor, active }): string =>
     active ? colors.lightCyan : bgcolor};
-  color: ${({ txtColor }): string => txtColor};
+  color: ${({ txtColor, active }): string =>
+    active ? colors.darkCyan : txtColor};
   font-family: "Space Mono", monospace;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: ${weights.bold};
   line-height: 0;
 `;

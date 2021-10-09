@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
-import { colors } from "../../styles/variables";
+import { colors, weights } from "../../styles/variables";
 interface TCInputBoxProps {
   name: string;
   label: string;
@@ -24,19 +24,20 @@ const TCInputBox = ({
 );
 
 const Layout = styled.div`
-  margin: 1rem 0;
+  margin-top: 0.5rem;
   > input {
     margin: 0.5rem 0;
+    padding-right: 1rem;
     width: 100%;
     height: 1.8rem;
     border: none;
     border-radius: 7px;
-    color: ${colors.grey};
+    color: ${colors.darkCyan};
     background-color: ${colors.cyan};
     font-family: "Space Mono", monospace;
     font-size: 27px;
+    font-weight: ${weights.bold};
     text-align: right;
-    background-image: url("../../icons/icon-dollar.svg");
   }
 `;
 

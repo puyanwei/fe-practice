@@ -37,7 +37,8 @@
 }
 
 .tc-summary-amount {
-  font-size: 40px;
+  color: hsl(172deg 67% 45%);
+  font-size: 34px;
   font-weight: bold;
 }
 

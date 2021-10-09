@@ -36,7 +36,7 @@ const Layout = styled.div`
     width: 100%;
     height: 2rem;
     margin: 0.5rem 0;
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    padding: 0.5rem;
     border-radius: 7px;
     border: none;
     font-size: 27px;

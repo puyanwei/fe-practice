@@ -8,7 +8,7 @@ interface CardProps {
 
 export const TCCard = styled.div<CardProps>`
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 25px;
   background-color: ${({ colour }) => colour};
   max-width: ${({ maxWidth }) => maxWidth};

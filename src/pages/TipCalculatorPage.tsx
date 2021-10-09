@@ -95,7 +95,9 @@ const TipCalculatorPage = () => {
                 <br />
                 <span className="tc-summary-dark">/ person</span>
               </div>
-              <span className="tc-summary-amount">{tipAmount.toFixed(2)}</span>
+              <span className="tc-summary-amount">
+                &#36;{tipAmount.toFixed(2)}
+              </span>
             </div>
             <div className="tip-summary-line flex-inbetween margin-ver">
               <div className="line-height-sm">
@@ -103,7 +105,7 @@ const TipCalculatorPage = () => {
                 <br />
                 <span className="tc-summary-dark">/ person</span>
               </div>
-              <span className="tc-summary-amount">{total.toFixed(2)}</span>
+              <span className="tc-summary-amount">&#36;{total.toFixed(2)}</span>
             </div>
             <TCButton
               label="RESET"
