@@ -1,7 +1,10 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
 import styled from "styled-components";
+import SplitterTitle from "../components/tip-calculator/SplitterTitle";
 import TCButton from "../components/tip-calculator/TCButton";
 import TCInputBox from "../components/tip-calculator/TCInputBox";
+import IconDollar from "../icons/IconDollar";
+import IconPerson from "../icons/IconPerson";
 import { TCCard } from "../styles/styled-components/TCCard";
 import { TCSummaryCard } from "../styles/styled-components/TCSummaryCard";
 import { colors, size } from "../styles/variables";
@@ -47,7 +50,7 @@ const TipCalculatorPage = () => {
 
   return (
     <Layout>
-      <h1 className="no-margin">SPLITTER</h1>
+      <SplitterTitle />
       <CalculatorLayout>
         <TCCard colour="white" maxWidth="14rem">
           <TipLayout>
@@ -55,6 +58,7 @@ const TipCalculatorPage = () => {
               name="bill"
               label="Bill"
               value={bill}
+              icon={<IconDollar />}
               onChange={(e) => setBill(parseFloat(e.target.value))}
             />
             <label className="tc-label">Select Tip %</label>
@@ -80,6 +84,7 @@ const TipCalculatorPage = () => {
               name="people"
               label="Number of People"
               value={people}
+              icon={<IconPerson />}
               onChange={(e) => setPeople(parseFloat(e.target.value))}
             />
           </TipLayout>
@@ -90,7 +95,7 @@ const TipCalculatorPage = () => {
                 <br />
                 <span className="tc-summary-dark">/ person</span>
               </div>
-              <span className="tc-summary-amount">${tipAmount.toFixed(2)}</span>
+              <span className="tc-summary-amount">{tipAmount.toFixed(2)}</span>
             </div>
             <div className="tip-summary-line flex-inbetween margin-ver">
               <div className="line-height-sm">
@@ -98,7 +103,7 @@ const TipCalculatorPage = () => {
                 <br />
                 <span className="tc-summary-dark">/ person</span>
               </div>
-              <span className="tc-summary-amount">${total.toFixed(2)}</span>
+              <span className="tc-summary-amount">{total.toFixed(2)}</span>
             </div>
             <TCButton
               label="RESET"
@@ -115,7 +120,6 @@ const TipCalculatorPage = () => {
 };
 
 const Layout = styled.div`
-  height: 100vh;
   color: ${colors.grey};
   background-color: ${colors.cyan};
   @media (min-width: ${size.tablet}) and (max-width: ${size.desktop}) {
