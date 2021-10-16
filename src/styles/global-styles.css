@@ -1,0 +1,30 @@
+.center {
+  text-align: center;
+}
+
+.margin-sm {
+  margin: 1rem;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.margin-hor {
+  margin: 0 1rem;
+}
+
+.margin-vert {
+  margin: 1rem 0;
+}
+
+.flex-inbetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line-height-sm {
+  line-height: 0.8rem;
+}

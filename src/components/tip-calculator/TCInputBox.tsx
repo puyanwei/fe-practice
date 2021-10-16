@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
-import { colors, weights } from "../../styles/variables";
+import { colors, weights } from "styles/tip-calculator/tip-calculator-variables";
 interface TCInputBoxProps {
   name: string;
   label: string;

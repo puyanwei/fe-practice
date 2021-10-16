@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
-import { colors, size } from "../../styles/variables";
+import { colors, size } from "styles/tip-calculator/tip-calculator-variables";
 
 interface TCCustomInputBoxProps {
   name: string;

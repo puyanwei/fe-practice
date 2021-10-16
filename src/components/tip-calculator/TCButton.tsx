@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, weights, size } from "../../styles/variables";
+import { colors, weights, size } from "styles/tip-calculator/tip-calculator-variables";
 
 interface TCButtonProps {
   label: string;

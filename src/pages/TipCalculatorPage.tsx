@@ -1,14 +1,16 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
 import styled from "styled-components";
-import SplitterTitle from "../components/tip-calculator/SplitterTitle";
-import TCButton from "../components/tip-calculator/TCButton";
-import TCCustomInputBox from "../components/tip-calculator/TCCustomInputBox";
-import TCInputBox from "../components/tip-calculator/TCInputBox";
-import IconDollar from "../icons/IconDollar";
-import IconPerson from "../icons/IconPerson";
-import { TCCard } from "../styles/styled-components/TCCard";
-import { TCSummaryCard } from "../styles/styled-components/TCSummaryCard";
-import { colors, size } from "../styles/variables";
+import "styles/tip-calculator/tip-calculator-styles.css"
+
+import IconDollar from "icons/IconDollar";
+import IconPerson from "icons/IconPerson";
+import { TCCard } from "styles/tip-calculator/TCCard";
+import { TCSummaryCard } from "styles/tip-calculator/TCSummaryCard";
+import { colors, size } from "styles/tip-calculator/tip-calculator-variables";
+import SplitterTitle from 'components/tip-calculator/SplitterTitle';
+import TCButton from 'components/tip-calculator/TCButton';
+import TCCustomInputBox from 'components/tip-calculator/TCCustomInputBox';
+import TCInputBox from 'components/tip-calculator/TCInputBox';
 
 const TipCalculatorPage = () => {
   const [tip, setTip] = useState(0);
@@ -102,7 +104,7 @@ const TipCalculatorPage = () => {
                   &#36;{tipAmount.toFixed(2)}
                 </span>
               </div>
-              <div className="tip-summary-line flex-inbetween margin-ver">
+              <div className="tip-summary-line flex-inbetween margin-vert">
                 <div className="line-height-sm">
                   <span className="tc-summary">Total</span>
                   <br />

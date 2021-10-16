@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { size } from "../variables";
+import { size } from "styles/tip-calculator/tip-calculator-variables";
 
 interface CardProps {
   colour: string;
