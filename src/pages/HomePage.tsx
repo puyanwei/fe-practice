@@ -8,19 +8,21 @@ const HomePage = () => {
       <p>
         Practice website projects mainly from
         <a href="https://www.frontendmentor.io/">Frontend Mentor</a>. All pages
-        using React with Typescript and styled components.
+        using React with Typescript
       </p>
-      <Link to="/tip-calculator">Tip Calculator</Link> - from
+      <Link to="/tip-calculator">Tip Calculator</Link> - from&nbsp;
       <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">
         this
       </a>
-      challenge.
+      &nbsp;challenge. Uses
+      <a href="https://styled-components.com/">Styled Components</a> for css.
       <br />
-      <Link to="/furniture-shop">Furniture Shop</Link> - from
+      <Link to="/furniture-shop">Furniture Shop</Link> - from&nbsp;
       <a href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq">
         this
       </a>
-      challenge.
+      &nbsp;challenge. Uses{' '}
+      <a href="https://tailwindcss.com/">Tailwind for css</a>
     </Layout>
   );
 };
