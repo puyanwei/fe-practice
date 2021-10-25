@@ -2,8 +2,6 @@ import { ChangeEvent, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 import 'styles/tip-calculator/tip-calculator-styles.css';
 
-import IconDollar from 'icons/IconDollar';
-import IconPerson from 'icons/IconPerson';
 import { TCCard } from 'styles/tip-calculator/TCCard';
 import { TCSummaryCard } from 'styles/tip-calculator/TCSummaryCard';
 import { colors, size } from 'styles/tip-calculator/tip-calculator-variables';
@@ -11,6 +9,8 @@ import SplitterTitle from 'components/tip-calculator/SplitterTitle';
 import TCButton from 'components/tip-calculator/TCButton';
 import TCCustomInputBox from 'components/tip-calculator/TCCustomInputBox';
 import TCInputBox from 'components/tip-calculator/TCInputBox';
+import IconDollar from 'icons/tip-calculator-icons/IconDollar';
+import IconPerson from 'icons/tip-calculator-icons/IconPerson';
 
 const TipCalculatorPage = () => {
   const [tip, setTip] = useState(0);
