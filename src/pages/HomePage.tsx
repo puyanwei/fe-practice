@@ -6,7 +6,7 @@ const HomePage = () => {
     <Layout>
       <h1 className="center">Frontend Practice</h1>
       <p>
-        Practice website projects mainly from
+        Practice website projects mainly from&nbsp;
         <a href="https://www.frontendmentor.io/">Frontend Mentor</a>. All pages
         using React with Typescript
       </p>
@@ -14,15 +14,15 @@ const HomePage = () => {
       <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">
         this
       </a>
-      &nbsp;challenge. Uses
+      &nbsp;challenge. Uses&nbsp;
       <a href="https://styled-components.com/">Styled Components</a> for css.
       <br />
       <Link to="/furniture-shop">Furniture Shop</Link> - from&nbsp;
       <a href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq">
         this
       </a>
-      &nbsp;challenge. Uses{' '}
-      <a href="https://tailwindcss.com/">Tailwind for css</a>
+      &nbsp;challenge. Uses&nbsp;
+      <a href="https://tailwindcss.com/">Tailwind</a>&nbsp;for css
     </Layout>
   );
 };
