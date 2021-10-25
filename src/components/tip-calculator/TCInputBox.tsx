@@ -1,6 +1,9 @@
-import styled from "styled-components";
-import { ChangeEvent } from "react";
-import { colors, weights } from "styles/tip-calculator/tip-calculator-variables";
+import styled from 'styled-components';
+import { ChangeEvent } from 'react';
+import {
+  colors,
+  weights,
+} from 'styles/tip-calculator/tip-calculator-variables';
 interface TCInputBoxProps {
   name: string;
   label: string;
@@ -34,7 +37,6 @@ const Layout = styled.div`
     border-radius: 7px;
     color: ${colors.darkCyan};
     background-color: ${colors.cyan};
-    font-family: "Space Mono", monospace;
     font-size: 27px;
     font-weight: ${weights.bold};
     text-align: right;

@@ -1,5 +1,9 @@
-import styled from "styled-components";
-import { colors, weights, size } from "styles/tip-calculator/tip-calculator-variables";
+import styled from 'styled-components';
+import {
+  colors,
+  weights,
+  size,
+} from 'styles/tip-calculator/tip-calculator-variables';
 
 interface TCButtonProps {
   label: string;
@@ -22,7 +26,7 @@ interface StyledButtonProps {
 const TCButton = ({
   label,
   width,
-  lgWidth = "",
+  lgWidth = '',
   bgcolor = `${colors.darkCyan}`,
   txtColor = `${colors.white}`,
   active = false,
@@ -54,7 +58,6 @@ const TipButton = styled.button<StyledButtonProps>`
     active ? colors.lightCyan : bgcolor};
   color: ${({ txtColor, active }): string =>
     active ? colors.darkCyan : txtColor};
-  font-family: "Space Mono", monospace;
   font-size: 22px;
   font-weight: ${weights.bold};
   line-height: 0;
