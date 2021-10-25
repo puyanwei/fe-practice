@@ -12,10 +12,14 @@ const FurnitureShop = () => {
           src="images/mobile-image-hero-1.jpg"
           alt=""
         />
-        <IconHamburger />
-        <h3 className="absolute top-0 transform translate-x-1/2">room</h3>
+        <div className="absolute top-6 left-4">
+          <IconHamburger />
+        </div>
+        <h3 className="absolute text-white font-semibold top-4 left-1/2 transform -translate-x-1/2">
+          room
+        </h3>
       </div>
-      <div className="m-3">
+      <div className="m-5">
         <h2 className="text-lg font-bold">
           Discover innovative ways to decorate
         </h2>
@@ -27,7 +31,7 @@ const FurnitureShop = () => {
           love.
         </p>
         <a href="/">
-          <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 tracking-xlg font-semibold no-underline text-black">
+          <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 mr-6 tracking-xlg font-semibold no-underline text-black">
             Shop now
           </span>
           <span className="inline-block">
@@ -36,7 +40,7 @@ const FurnitureShop = () => {
         </a>
       </div>
       <img className="w-full my-10" src="images/image-about-dark.jpg" alt="" />
-      <div className="m-4 mb-10">
+      <div className="m-5 mb-10">
         <h3 className="text-xxs font-bold uppercase tracking-xsm mb-2">
           About our furniture
         </h3>
