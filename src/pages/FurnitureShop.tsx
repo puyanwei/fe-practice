@@ -1,18 +1,21 @@
 import '../styles/furniture-shop/furniture-shop-styles.css';
 import 'tailwindcss/tailwind.css';
 import IconArrow from 'icons/furniture-shop-icons/IconArrow';
+import IconHamburger from 'icons/furniture-shop-icons/IconHamburger';
 
 const FurnitureShop = () => {
   return (
     <div className="furniture-shop">
-      <h3>room</h3>
-      <nav> home | shop | about | contact</nav>
-      <img
-        className="w-full my-4"
-        src="images/mobile-image-hero-1.jpg"
-        alt=""
-      />
-      <div className="m-8">
+      <div className="relative">
+        <img
+          className="w-full my-4 mt-0"
+          src="images/mobile-image-hero-1.jpg"
+          alt=""
+        />
+        <IconHamburger />
+        <h3 className="absolute top-0 transform translate-x-1/2">room</h3>
+      </div>
+      <div className="m-3">
         <h2 className="text-lg font-bold">
           Discover innovative ways to decorate
         </h2>
@@ -24,15 +27,19 @@ const FurnitureShop = () => {
           love.
         </p>
         <a href="/">
-          <span className="inline-block uppercase text-xxs my-6 mr-8 tracking-xlg font-semibold no-underline text-black">
+          <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 tracking-xlg font-semibold no-underline text-black">
             Shop now
           </span>
-          <IconArrow />
+          <span className="inline-block">
+            <IconArrow />
+          </span>
         </a>
       </div>
-      <img className="w-full" src="images/image-about-dark.jpg" alt="" />
-      <div className="m-8">
-        <h3 className="text-xxs uppercase tracking-xsm">About our furniture</h3>
+      <img className="w-full my-10" src="images/image-about-dark.jpg" alt="" />
+      <div className="m-4 mb-10">
+        <h3 className="text-xxs font-bold uppercase tracking-xsm mb-2">
+          About our furniture
+        </h3>
         <p className="furniture-desc">
           Our multifunctional collection blends design and function to suit your
           individual taste. Make each room unique, or pick a cohesive theme that
