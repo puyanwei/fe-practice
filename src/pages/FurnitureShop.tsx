@@ -7,7 +7,13 @@ import StyledIcon from 'components/shared/StyledIcon';
 const FurnitureShop = () => {
   return (
     <div className="furniture-shop">
-      <Carousel />
+      <Carousel
+        mobileImages={[
+          'images/mobile-image-hero-1.jpg',
+          'images/mobile-image-hero-2.jpg',
+          'images/mobile-image-hero-3.jpg',
+        ]}
+      />
       <div className="m-5">
         <h2 className="text-lg font-bold">
           Discover innovative ways to decorate

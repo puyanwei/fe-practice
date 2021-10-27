@@ -6,23 +6,22 @@ import IconHamburger from 'icons/furniture-shop-icons/IconHamburger';
 import LogoRoom from 'icons/furniture-shop-icons/LogoRoom';
 import CarouselButton from './CarouselButton';
 
-const Carousel = () => {
+interface CarouselProps {
+  mobileImages: string[];
+}
+
+const Carousel = ({ mobileImages }: CarouselProps) => {
   const [imageIndex, setImageIndex] = useState(0);
-  const images = [
-    'images/mobile-image-hero-1.jpg',
-    'images/mobile-image-hero-2.jpg',
-    'images/mobile-image-hero-3.jpg',
-  ];
 
   const handleImageIndex = (iteration: number) => {
     const indexNumber = imageIndex + iteration;
-    if (indexNumber > -1 && indexNumber < images.length)
+    if (indexNumber > -1 && indexNumber < mobileImages.length)
       setImageIndex(imageIndex + iteration);
   };
 
   return (
     <div className="relative">
-      <img className="w-full my-4 mt-0" src={images[imageIndex]} alt="" />
+      <img className="w-full my-4 mt-0" src={mobileImages[imageIndex]} alt="" />
       <StyledIcon icon={<IconHamburger />} styles="absolute top-6 left-4" />
       <StyledIcon
         icon={<LogoRoom />}
