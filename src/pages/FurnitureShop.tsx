@@ -1,24 +1,13 @@
 import '../styles/furniture-shop/furniture-shop-styles.css';
 import 'tailwindcss/tailwind.css';
 import IconArrow from 'icons/furniture-shop-icons/IconArrow';
-import IconHamburger from 'icons/furniture-shop-icons/IconHamburger';
+import Carousel from 'components/furniture-shop/Carousel';
+import StyledIcon from 'components/shared/StyledIcon';
 
 const FurnitureShop = () => {
   return (
     <div className="furniture-shop">
-      <div className="relative">
-        <img
-          className="w-full my-4 mt-0"
-          src="images/mobile-image-hero-1.jpg"
-          alt=""
-        />
-        <div className="absolute top-6 left-4">
-          <IconHamburger />
-        </div>
-        <h3 className="absolute text-white font-semibold top-4 left-1/2 transform -translate-x-1/2">
-          room
-        </h3>
-      </div>
+      <Carousel />
       <div className="m-5">
         <h2 className="text-lg font-bold">
           Discover innovative ways to decorate
@@ -30,13 +19,11 @@ const FurnitureShop = () => {
           collection and make your property a reflection of you and what you
           love.
         </p>
-        <a href="/">
+        <a href="#">
           <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 mr-6 tracking-xlg font-semibold no-underline text-black">
             Shop now
           </span>
-          <span className="inline-block">
-            <IconArrow />
-          </span>
+          <StyledIcon icon={<IconArrow />} styles="inline-block" />
         </a>
       </div>
       <img className="w-full my-10" src="images/image-about-dark.jpg" alt="" />

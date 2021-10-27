@@ -4,6 +4,7 @@ module.exports = {
       grayDark: 'hsl(0, 0%, 63%)',
       grayVeryDark: 'hsl(0, 0%, 27%)',
       white: '#FFF',
+      black: '#000000',
     },
     letterSpacing: {
       xsm: '0.1rem',
