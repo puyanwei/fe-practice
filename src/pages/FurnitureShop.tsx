@@ -8,6 +8,7 @@ import StyledIcon from 'components/shared/StyledIcon';
 import IconClose from 'icons/furniture-shop-icons/IconClose';
 import IconHamburger from 'icons/furniture-shop-icons/IconHamburger';
 import LogoRoom from 'icons/furniture-shop-icons/LogoRoom';
+import Navbar from 'components/furniture-shop/Navbar';
 
 const FurnitureShop = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -15,22 +16,15 @@ const FurnitureShop = () => {
   return (
     <div className="furniture-shop">
       {showNavbar && (
-        <nav>
-          <ul className="flex">
-            <StyledIcon
-              icon={<IconClose />}
-              button
-              styles="inline-flex p-4 justify-between"
-              onClick={() => setShowNavbar(false)}
-            />
-            <span className="justify-between">
-              <li className="text-xxs font-bold inline-flex m-4">home</li>
-              <li className="text-xxs font-bold inline-flex m-4">shop</li>
-              <li className="text-xxs font-bold inline-flex m-4">about</li>
-              <li className="text-xxs font-bold inline-flex m-4">contact</li>
-            </span>
-          </ul>
-        </nav>
+        <div className="flex justify-between">
+          <StyledIcon
+            icon={<IconClose />}
+            button
+            styles="inline-flex p-4"
+            onClick={() => setShowNavbar(false)}
+          />
+          <Navbar headerNames={['home', 'shop', 'about', 'contact']} />
+        </div>
       )}
       <Carousel
         mobileImages={[
@@ -43,12 +37,12 @@ const FurnitureShop = () => {
         <>
           <StyledIcon
             icon={<LogoRoom />}
-            styles="absolute text-white font-semibold top-6 left-1/2 transform -translate-x-1/2"
+            styles="absolute text-white font-semibold top-4 left-1/2 transform -translate-x-1/2"
           />
           <StyledIcon
             icon={<IconHamburger />}
             button
-            styles="absolute top-6 left-5 cursor-pointer"
+            styles="absolute top-4 left-4 cursor-pointer"
             onClick={() => setShowNavbar(true)}
           />
         </>
