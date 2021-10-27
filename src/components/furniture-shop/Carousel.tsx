@@ -10,8 +10,8 @@ const Carousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const images = [
     'images/mobile-image-hero-1.jpg',
-    'images/mobile-image-hero-1.jpg',
-    'images/mobile-image-hero-1.jpg',
+    'images/mobile-image-hero-2.jpg',
+    'images/mobile-image-hero-3.jpg',
   ];
 
   const handleImageIndex = (iteration: number) => {
@@ -22,7 +22,7 @@ const Carousel = () => {
 
   return (
     <div className="relative">
-      <img className="w-full my-4 mt-0" src={images[0]} alt="" />
+      <img className="w-full my-4 mt-0" src={images[imageIndex]} alt="" />
       <StyledIcon icon={<IconHamburger />} styles="absolute top-6 left-4" />
       <StyledIcon
         icon={<LogoRoom />}

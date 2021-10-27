@@ -4,9 +4,9 @@ interface CarouselButtonProps {
 }
 
 const CarouselButton = ({ children, onClick }: CarouselButtonProps) => (
-  <div className="inline-block m-4 cursor-pointer" onClick={onClick}>
+  <button className="inline-block p-4 cursor-pointer" onClick={onClick}>
     {children}
-  </div>
+  </button>
 );
 
 export default CarouselButton;
