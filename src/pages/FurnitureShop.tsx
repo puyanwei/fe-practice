@@ -49,7 +49,7 @@ const FurnitureShop = () => {
               <>
                 <StyledIcon
                   icon={<LogoRoom />}
-                  styles="absolute text-white font-semibold top-4 left-1/2 transform -translate-x-1/2"
+                  styles="absolute text-white font-semibold top-4 left-1/2 transform -translate-x-1/2 lg:hidden"
                 />
                 <StyledIcon
                   icon={<IconHamburger />}
