@@ -3,11 +3,12 @@ import StyledIcon from 'components/shared/StyledIcon';
 import IconAngleLeft from 'icons/furniture-shop-icons/IconAngleLeft';
 import IconAngleRight from 'icons/furniture-shop-icons/IconAngleRight';
 
-interface CarouselProps {
+export interface CarouselProps {
   mobileImages: string[];
+  desktopImages: string[];
 }
 
-const Carousel = ({ mobileImages }: CarouselProps) => {
+const Carousel = ({ mobileImages, desktopImages }: CarouselProps) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const handleImageIndex = (iteration: number) => {
@@ -17,8 +18,16 @@ const Carousel = ({ mobileImages }: CarouselProps) => {
   };
 
   return (
-    <div className="relative">
-      <img className="w-full my-4 mt-0" src={mobileImages[imageIndex]} alt="" />
+    <div className="relative lg:w-3/4 lg:max-h-96">
+      <img
+        className="w-full my-4 mt-0 lg:my-0 lg:object-cover lg:h-full"
+        src={
+          window.innerWidth < 1024
+            ? mobileImages[imageIndex]
+            : desktopImages[imageIndex]
+        }
+        alt=""
+      />
       <div className="bg-black absolute bottom-0 right-0 h-12">
         <StyledIcon
           icon={<IconAngleLeft />}

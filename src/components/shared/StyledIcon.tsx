@@ -4,6 +4,7 @@ interface StyledIconProps {
   icon: JSX.Element;
   onClick?: () => void;
 }
+
 const StyledIcon = ({
   styles = '',
   button = false,
