@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     colors: {
       grayDark: 'hsl(0, 0%, 63%)',
-      grayVeryDark: 'hsl(0, 0%, 27%)',
+      grayDarker: 'hsl(0, 0%, 27%)',
       white: '#FFF',
       black: '#000000',
     },

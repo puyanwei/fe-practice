@@ -18,7 +18,7 @@ const Carousel = ({ mobileImages, desktopImages }: CarouselProps) => {
   };
 
   return (
-    <div className="relative lg:w-3/4 lg:max-h-96">
+    <div className="relative lg:w-3/5 lg:max-h-96">
       <img
         className="w-full my-4 mt-0 lg:my-0 lg:object-cover lg:h-full"
         src={
@@ -28,18 +28,18 @@ const Carousel = ({ mobileImages, desktopImages }: CarouselProps) => {
         }
         alt=""
       />
-      <div className="bg-black absolute bottom-0 right-0 h-12">
+      <div className="bg-black absolute bottom-0 right-0 h-12 lg:-right-20 lg:ml-px">
         <StyledIcon
           icon={<IconAngleLeft />}
           button
           onClick={() => handleImageIndex(-1)}
-          styles="inline-flex p-4"
+          styles="inline-flex p-4 hover:bg-grayDarker"
         />
         <StyledIcon
           icon={<IconAngleRight />}
           button
           onClick={() => handleImageIndex(1)}
-          styles="inline-flex p-4"
+          styles="inline-flex p-4 hover:bg-grayDarker"
         />
       </div>
     </div>

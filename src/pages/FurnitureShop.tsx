@@ -32,7 +32,7 @@ const FurnitureShop = () => {
             showNavbar ? 'grey-out-children' : ''
           } lg:flex lg:flex-col lg:h-screen`}
         >
-          <div className="lg:inline-flex">
+          <div className="lg:h-full lg:inline-flex lg:flex-grow-2">
             <Carousel
               mobileImages={[
                 'images/mobile-image-hero-1.jpg',
@@ -59,7 +59,7 @@ const FurnitureShop = () => {
                 />
               </>
             )}
-            <div className="m-5 lg:m-14 lg:w-1/4">
+            <div className="m-5 lg:m-14 lg:w-2/5">
               <h2 className="text-lg font-bold">
                 Discover innovative ways to decorate
               </h2>
@@ -78,13 +78,13 @@ const FurnitureShop = () => {
               </a>
             </div>
           </div>
-          <div className="lg:inline-flex">
+          <div className="lg:h-full lg:inline-flex lg:flex-grow-1">
             <img
               className="w-full my-10 lg:my-0 lg:object-cover"
               src="images/image-about-dark.jpg"
               alt=""
             />
-            <div className="m-5 mb-10">
+            <div className="m-5 mb-10 lg:w-4/5 lg:m-12">
               <h3 className="text-xxs font-bold uppercase tracking-xsm mb-2">
                 About our furniture
               </h3>
