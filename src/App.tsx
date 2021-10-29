@@ -1,3 +1,4 @@
+import FurnitureShop from 'pages/FurnitureShop';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -9,6 +10,7 @@ const App = () => (
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/tip-calculator" component={TipCalculatorPage} />
+        <Route path="/furniture-shop" component={FurnitureShop} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

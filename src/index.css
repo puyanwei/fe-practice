@@ -1,3 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .furniture-desc {
+    @apply text-grayDark text-xxs leading-slight;
+  }
+  .grey-out-children {
+    @apply absolute top-0 left-0 z-10 h-full w-full opacity-50 pointer-events-none;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -8,8 +21,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Space Mono", monospace;
   font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root,
+.App {
+  min-height: 100vh;
 }

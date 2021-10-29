@@ -1,16 +1,16 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
-import styled from "styled-components";
-import "styles/tip-calculator/tip-calculator-styles.css"
+import { ChangeEvent, MouseEvent, useState } from 'react';
+import styled from 'styled-components';
+import 'styles/tip-calculator/tip-calculator-styles.css';
 
-import IconDollar from "icons/IconDollar";
-import IconPerson from "icons/IconPerson";
-import { TCCard } from "styles/tip-calculator/TCCard";
-import { TCSummaryCard } from "styles/tip-calculator/TCSummaryCard";
-import { colors, size } from "styles/tip-calculator/tip-calculator-variables";
+import { TCCard } from 'styles/tip-calculator/TCCard';
+import { TCSummaryCard } from 'styles/tip-calculator/TCSummaryCard';
+import { colors, size } from 'styles/tip-calculator/tip-calculator-variables';
 import SplitterTitle from 'components/tip-calculator/SplitterTitle';
 import TCButton from 'components/tip-calculator/TCButton';
 import TCCustomInputBox from 'components/tip-calculator/TCCustomInputBox';
 import TCInputBox from 'components/tip-calculator/TCInputBox';
+import IconDollar from 'icons/tip-calculator-icons/IconDollar';
+import IconPerson from 'icons/tip-calculator-icons/IconPerson';
 
 const TipCalculatorPage = () => {
   const [tip, setTip] = useState(0);
@@ -18,9 +18,9 @@ const TipCalculatorPage = () => {
   const [isCustomTip, setIsCustomTip] = useState(false);
   const [bill, setBill] = useState(0);
   const [people, setPeople] = useState(0);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState('');
 
-  const tipPercentages = ["5%", "10%", "15%", "25%", "50%"];
+  const tipPercentages = ['5%', '10%', '15%', '25%', '50%'];
 
   const handleTip = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
@@ -48,12 +48,12 @@ const TipCalculatorPage = () => {
     setBill(0);
     setCustomTip(0);
     setPeople(0);
-    setActive("");
+    setActive('');
   };
 
   return (
     <Layout>
-      <div className="calculator-app">
+      <div className="tip-calculator">
         <SplitterTitle />
         <CalculatorLayout>
           <TCCard colour="white">
@@ -82,7 +82,7 @@ const TipCalculatorPage = () => {
                   placeholder="Custom"
                   value={customTip}
                   onChange={handleCustomTip}
-                  onFocus={(e) => setActive("")}
+                  onFocus={(e) => setActive('')}
                 />
               </div>
               <TCInputBox

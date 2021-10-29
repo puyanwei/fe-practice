@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ChangeEvent } from "react";
-import { colors, size } from "styles/tip-calculator/tip-calculator-variables";
+import styled from 'styled-components';
+import { ChangeEvent } from 'react';
+import { colors, size } from 'styles/tip-calculator/tip-calculator-variables';
 
 interface TCCustomInputBoxProps {
   name: string;
@@ -42,7 +42,6 @@ const Layout = styled.div`
     font-size: 27px;
     color: hsl(172deg 14% 41%);
     background-color: ${colors.cyan};
-    font-family: "Space Mono", monospace;
     text-align: center;
   }
 
