@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['public/index.html'],
   theme: {
     colors: {
       grayDark: 'hsl(0, 0%, 63%)',

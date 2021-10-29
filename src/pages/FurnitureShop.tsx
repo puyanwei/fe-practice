@@ -70,7 +70,7 @@ const FurnitureShop = () => {
                 with our collection and make your property a reflection of you
                 and what you love.
               </p>
-              <a href="#">
+              <a href="/">
                 <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 mr-6 tracking-xlg font-semibold no-underline text-black">
                   Shop now
                 </span>
