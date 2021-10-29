@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['public/index.html'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     colors: {
       grayDark: 'hsl(0, 0%, 63%)',
