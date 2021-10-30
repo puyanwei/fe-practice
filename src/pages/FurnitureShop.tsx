@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import sanityClient from 'sanityClient';
 import '../styles/furniture-shop/furniture-shop-styles.css';
 import 'tailwindcss/tailwind.css';
 
@@ -12,6 +13,23 @@ import Navbar from 'components/furniture-shop/Navbar';
 
 const FurnitureShop = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "post"]{
+        title,
+        slug,
+        mainImage{
+          asset->{
+            _id,
+            url
+          }
+        }
+      }`
+      )
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <div className="furniture-shop">
