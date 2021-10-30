@@ -15,20 +15,7 @@ const FurnitureShop = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "post"]{
-        title,
-        slug,
-        mainImage{
-          asset->{
-            _id,
-            url
-          }
-        }
-      }`
-      )
-      .then((data) => console.log(data));
+    sanityClient.fetch(`*`).then((data) => console.log(data));
   }, []);
 
   return (

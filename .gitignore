@@ -23,8 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 #sanity
-/sanity/node_modules
-/sanity/logs
-/sanity/*.log
-/sanity/dist
-/sanity/coverage
+/furniture-shop-sanity/node_modules
+/furniture-shop-sanity/logs
+/furniture-shop-sanity/*.log
+/furniture-shop-sanity/dist
+/furniture-shop-sanity/coverage
