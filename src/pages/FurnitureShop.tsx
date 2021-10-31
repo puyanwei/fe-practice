@@ -11,12 +11,30 @@ import IconHamburger from 'icons/furniture-shop-icons/IconHamburger';
 import LogoRoom from 'icons/furniture-shop-icons/LogoRoom';
 import Navbar from 'components/furniture-shop/Navbar';
 
+interface SanityData {
+  heroDescription: string;
+  heroTitle: string;
+  lowerBlurb: string;
+  subHeader: string;
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
+}
+
 const FurnitureShop = () => {
+  const [sanityData, setSanityData] = useState<SanityData | null>(null);
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
-    sanityClient.fetch(`*`).then((data) => console.log(data));
+    sanityClient
+      .fetch(`*[_type=="frontPage"][0]`)
+      .then((data) => setSanityData(data))
+      .catch((error) => console.log(error));
   }, []);
+
+  if (!sanityData) return <div>Loading...</div>;
 
   return (
     <div className="furniture-shop">
@@ -65,16 +83,8 @@ const FurnitureShop = () => {
               </>
             )}
             <div className="m-5 lg:m-14 lg:w-2/5">
-              <h2 className="text-lg font-bold">
-                Discover innovative ways to decorate
-              </h2>
-              <p className="furniture-desc">
-                We provide unmatched quality, comfort, and style for property
-                owners across the country. Our experts combine form and function
-                in bringing your vision to life. Create a room in your own style
-                with our collection and make your property a reflection of you
-                and what you love.
-              </p>
+              <h2 className="text-lg font-bold">{sanityData.heroTitle}</h2>
+              <p className="furniture-desc">{sanityData.heroDescription}</p>
               <a href="/">
                 <span className="inline-block uppercase text-xxs mt-10 ml-0 mb-2 mr-6 tracking-xlg font-semibold no-underline text-black">
                   Shop now
@@ -91,17 +101,9 @@ const FurnitureShop = () => {
             />
             <div className="m-5 mb-10 lg:w-4/5 lg:m-12">
               <h3 className="text-xxs font-bold uppercase tracking-xsm mb-2">
-                About our furniture
+                {sanityData.subHeader}
               </h3>
-              <p className="furniture-desc">
-                Our multifunctional collection blends design and function to
-                suit your individual taste. Make each room unique, or pick a
-                cohesive theme that best express your interests and what
-                inspires you. Find the furniture pieces you need, from
-                traditional to contemporary styles or anything in between.
-                Product specialists are available to help you create your dream
-                space.
-              </p>
+              <p className="furniture-desc">{sanityData.lowerBlurb}</p>
             </div>
             <img
               className="w-full object-cover"
