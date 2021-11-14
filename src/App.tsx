@@ -1,8 +1,8 @@
-import FurnitureShop from 'pages/FurnitureShop';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import TipCalculatorPage from "./pages/TipCalculatorPage";
+import FurnitureShop from 'pages/FurnitureShop';
 
 const App = () => (
   <div className="App">

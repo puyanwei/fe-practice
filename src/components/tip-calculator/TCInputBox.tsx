@@ -50,7 +50,7 @@ const Layout = styled.div`
 
 const IconPosition = styled.span`
   position: relative;
-  bottom: 2.2rem;
+  bottom: 1.8rem;
   left: 0.6rem;
 `;
 

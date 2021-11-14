@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { size } from "styles/tip-calculator/tip-calculator-variables";
+import styled from 'styled-components';
+import { size } from 'styles/tip-calculator/tip-calculator-variables';
 
 interface CardProps {
   colour: string;
@@ -7,7 +7,7 @@ interface CardProps {
 
 export const TCCard = styled.div<CardProps>`
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border-radius: 25px;
   background-color: ${({ colour }) => colour};
 
