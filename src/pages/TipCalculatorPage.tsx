@@ -1,5 +1,5 @@
 import { ChangeEvent, MouseEvent, useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import 'styles/tip-calculator/tip-calculator-styles.css';
 
 import { TCCard } from 'styles/tip-calculator/TCCard';

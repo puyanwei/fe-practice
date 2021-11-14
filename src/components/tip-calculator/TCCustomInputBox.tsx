@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { ChangeEvent } from 'react';
 import { colors, size } from 'styles/tip-calculator/tip-calculator-variables';
 

@@ -1,5 +1,5 @@
 import IconSplitterTitle from 'icons/tip-calculator-icons/IconSplitterTitle';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const SplitterTitle = () => (
   <Layout>

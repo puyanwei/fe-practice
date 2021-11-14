@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { size } from 'styles/tip-calculator/tip-calculator-variables';
 
 interface CardProps {
